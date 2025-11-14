@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+  <title>PetLink - Prototipo</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="app" role="application" aria-label="PetLink prototipo">
+
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="img/logo.png" alt="PetLink Logo" style="width:100%;height:100%;object-fit:contain">
+        </div>
+        <div>
+          <h1>PetLink</h1>
+          <div class="muted" style="font-size:12px">Chía - Cundinamarca </div>
+        </div>
+      </div>
+      <!-- espacio -->
+    </header>
+
+    <main id="main">
+      <!-- 1 Bienvenida -->
+      <section id="screen-1" class="screen active" aria-labelledby="s1">
+        <div class="card" style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);color:white;text-align:center;padding:24px;">
+          <h2 id="s1" style="color:white;font-size:24px;margin-bottom:12px">Bienvenido a PetLink</h2>
+          <p style="margin:0 0 16px 0;opacity:0.95;font-size:15px">Conecta con refugios, adopta y ayuda desde Chía</p>
+          <div style="display:flex;gap:8px;justify-content:center;margin:16px 0;flex-wrap:wrap">
+            <img src="img/perro-nube.jpg" alt="Mascota" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid white;box-shadow:0 4px 8px rgba(0,0,0,0.2)">
+            <img src="img/gato-michi.jpg" alt="Mascota" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid white;box-shadow:0 4px 8px rgba(0,0,0,0.2)">
+            <img src="img/perro-roco.jpg" alt="Mascota" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid white;box-shadow:0 4px 8px rgba(0,0,0,0.2)">
+            <img src="img/gato-simba.jpeg" alt="Mascota" style="width:70px;height:70px;border-radius:50%;object-fit:cover;border:3px solid white;box-shadow:0 4px 8px rgba(0,0,0,0.2);object-position:center top">
+          </div>
+          <button class="btn primary" style="background:white;color:#667eea;font-weight:600;padding:12px 32px;margin-top:8px" onclick="goTo(2)">Comenzar</button>
+        </div>
+
+        <div class="card" style="text-align:center">
+          <div style="display:flex;gap:16px;justify-content:space-around;flex-wrap:wrap">
+            <div style="flex:1;min-width:100px">
+              <div style="font-size:32px;color:#667eea;font-weight:bold">12+</div>
+              <div class="muted" style="font-size:13px">Mascotas disponibles</div>
+            </div>
+            <div style="flex:1;min-width:100px">
+              <div style="font-size:32px;color:#667eea;font-weight:bold">5+</div>
+              <div class="muted" style="font-size:13px">Refugios activos</div>
+            </div>
+            <div style="flex:1;min-width:100px">
+              <div style="font-size:32px;color:#667eea;font-weight:bold">20+</div>
+              <div class="muted" style="font-size:13px">Adopciones exitosas</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 2 Registro / Login -->
+      <section id="screen-2" class="screen" aria-labelledby="s2">
+        <div class="card">
+          <h2 id="s2">Crear cuenta / Iniciar sesión</h2>
+          <p class="small">Regístrate como adoptante o fundación</p>
+          <div style="height:8px"></div>
+
+          <label>Correo</label>
+          <input id="r-email" type="email" placeholder="tucorreo@ejemplo.com">
+          <label style="margin-top:8px">Contraseña</label>
+          <input id="r-pass" type="password" placeholder="Contraseña">
+          <div style="height:8px"></div>
+          <label class="small-label">¿Eres fundación?</label>
+          <select id="r-role">
+            <option value="adoptante">No, soy adoptante</option>
+            <option value="fundacion">Sí, soy fundación</option>
+          </select>
+
+          <div style="height:10px"></div>
+          <div style="display:flex;gap:8px">
+            <button class="btn primary" onclick="alert('Cuenta creada (simulado)');goTo(4)">Crear cuenta</button>
+            <button class="btn ghost" onclick="alert('Iniciar sesión (simulado)');goTo(4)">Iniciar sesión</button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 3 Selección perfil / Explorar -->
+      <section id="screen-3" class="screen" aria-labelledby="s3">
+        <div class="card" style="text-align:center;padding:20px">
+          <h2 id="s3" style="margin-bottom:8px">¿Cómo deseas explorar?</h2>
+          <p class="muted" style="margin-bottom:20px">Selecciona tu perfil para comenzar</p>
+        </div>
+
+        <!-- Opción Adoptante -->
+        <div class="card" onclick="goTo(4)" style="cursor:pointer;background:linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);color:white;padding:20px;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="display:flex;gap:16px;align-items:center">
+            <div style="background:white;border-radius:50%;padding:16px;width:70px;height:70px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0">
+              🏠
+            </div>
+            <div style="text-align:left;flex:1">
+              <h3 style="margin:0 0 8px 0;color:white;font-size:20px">Adoptante</h3>
+              <p style="margin:0;opacity:0.95;font-size:14px">Busca tu compañero ideal y dale un hogar lleno de amor</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opción Fundación -->
+        <div class="card" onclick="goTo(10)" style="cursor:pointer;background:linear-gradient(135deg, #f093fb 0%, #f5576c 100%);color:white;padding:20px;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+          <div style="display:flex;gap:16px;align-items:center">
+            <div style="background:white;border-radius:50%;padding:16px;width:70px;height:70px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0">
+              🏥
+            </div>
+            <div style="text-align:left;flex:1">
+              <h3 style="margin:0 0 8px 0;color:white;font-size:20px">Fundación</h3>
+              <p style="margin:0;opacity:0.95;font-size:14px">Gestiona tus mascotas y solicitudes de adopción</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 4 Home / Buscador -->
+      <section id="screen-4" class="screen" aria-labelledby="s4">
+        <div class="card">
+          <h2 id="s4">Buscar mascotas</h2>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <input id="q" placeholder="Buscar por especie">
+            <button class="btn primary" onclick="goTo(5)">Buscar</button>
+          </div>
+          <div style="height:10px"></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn ghost" onclick="applyFilter('Perro')">Perro</button>
+            <button class="btn ghost" onclick="goTo(5)">Gato</button>
+            <button class="btn ghost" onclick="applyFilter('Otro')">Otro</button>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <h2 class="muted" style="margin:0">Destacados</h2>
+            <button class="btn ghost" onclick="goTo(5)" style="font-size:13px">Ver todos</button>
+          </div>
+          <div class="pet-grid" id="featured">
+            <!-- populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 Gatos disponibles -->
+      <section id="screen-5" class="screen" aria-labelledby="s5">
+        <div class="card">
+          <h2 id="s5">Resultados en Chía</h2>
+          <p class="muted">Encontramos estas mascotas cerca de ti</p>
+        </div>
+        <div class="card">
+          <div id="cats-grid" class="pet-grid">
+            <!-- cards JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 Lista de mascotas (resultados) -->
+      <section id="screen-6" class="screen" aria-labelledby="s6">
+        <div class="card">
+          <h2 id="s6">Resultados en Chía</h2>
+          <p class="muted">Encontramos estas mascotas cerca de ti</p>
+        </div>
+        <div class="card">
+          <div id="results" class="pet-grid">
+            <!-- cards JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 Perfil de mascota -->
+      <section id="screen-7" class="screen" aria-labelledby="s7">
+        <div class="card">
+          <h2 id="s7">Ficha: Nube</h2>
+          <div class="row" style="align-items:flex-start;flex-wrap:wrap">
+            <div class="col" style="min-width:200px">
+              <img src="img/perro-nube.jpg" alt="Nube"
+                style="width:100%;border-radius:10px;object-fit:cover;margin-bottom:8px;max-height:300px">
+              <div class="muted">4 años • Tamaño mediano • Esterilizada • Vacunas al día • Compatible con otros
+                animales • Compatible con niños</div>
+              <div style="height:8px"></div>
+              <p class="muted">Historia: Rescatada en carretera. Muy cariñosa y sociable. Ideal para hogar con patio.
+              </p>
+            </div>
+            <div style="min-width:200px;flex:0 0 auto">
+              <div style="background:#f8fbff;padding:12px;border-radius:10px;border:1px solid #e6eefc">
+                <strong>Refugio:</strong>
+                <div class="muted">Casa Peluda</div>
+                <div style="height:8px"></div>
+                <div class="muted">Tel: 300 123 4567</div>
+                <div style="height:10px"></div>
+                <button class="btn primary" style="width:100%;margin-bottom:8px" onclick="goTo(8)">Solicitar adopción</button>
+                <button class="btn ghost" style="width:100%" onclick="goTo(9)">Chatear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="muted">Ubicación del refugio</h3>
+          <iframe 
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-74.066,-4.878,-74.016,-4.828&layer=mapnik&marker=4.8566,-74.0419" 
+            style="border:none;width:100%;height:200px;border-radius:8px;display:block;">
+          </iframe>
+        </div>
+      </section>
+
+      <!-- 8 Formulario de adopción -->
+      <section id="screen-8" class="screen" aria-labelledby="s8">
+        <div class="card">
+          <h2 id="s8">Formulario de solicitud de adopción</h2>
+          <p class="muted">Completa los datos para que la fundación revise tu solicitud</p>
+
+          <label>Nombre completo</label>
+          <input id="ad-name" placeholder="Nombre y apellidos">
+
+          <label style="margin-top:8px">Teléfono</label>
+          <input id="ad-phone" placeholder="300 000 0000">
+
+          <label style="margin-top:8px">Dirección</label>
+          <input id="ad-address" placeholder="Barrio, calle">
+
+          <label style="margin-top:8px">Tipo de vivienda</label>
+          <select id="ad-home">
+            <option>Casa con patio</option>
+            <option>Apartamento</option>
+            <option>Finca</option>
+          </select>
+
+          <label style="margin-top:8px">¿Tienes otras mascotas?</label>
+          <select id="ad-other">
+            <option>No</option>
+            <option>Sí</option>
+          </select>
+
+          <label style="margin-top:8px">Motivo de adopción</label>
+          <textarea id="ad-motive" placeholder="Explique por qué desea adoptar"></textarea>
+
+
+          <div style="height:12px"></div>
+          <div style="display:flex;gap:8px">
+            <button class="btn primary" onclick="submitAdoption()">Enviar solicitud</button>
+            <button class="btn ghost" onclick="goTo(7)">Cancelar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 Confirmación / Estado -->
+      <section id="screen-9" class="screen" aria-labelledby="s9">
+        <div class="card">
+          <h2 id="s9">Solicitud enviada</h2>
+          <p class="muted">Tu solicitud ha sido enviada a la fundación. Te contactarán por teléfono o mensaje en las
+            próximas 48 horas.</p>
+          <div style="height:10px"></div>
+          <div class="card">
+            <strong>Estado:</strong> <span class="status">Pendiente de revisión</span>
+            <ul class="muted" style="margin-top:10px">
+              <li>01 - Solicitud recibida</li>
+              <li>02 - Revisión de fundación</li>
+              <li>03 - Programación de visita</li>
+            </ul>
+          </div>
+          <div style="height:10px"></div>
+          <button class="btn primary" onclick="goTo(4)">Volver al listado</button>
+        </div>
+      </section>
+
+      <!-- 10 Panel Fundación (vista pública) -->
+      <section id="screen-10" class="screen" aria-labelledby="s10">
+        <div class="card">
+          <h2 id="s10">Perfil Fundación - Casa Peluda</h2>
+          <p class="muted">Información pública del refugio</p>
+
+          <div style="height:8px"></div>
+          <label>Nombre</label>
+          <input value="Casa Peluda" disabled>
+
+          <label style="margin-top:8px">Teléfono</label>
+          <input value="300 123 4567" disabled>
+
+          <label style="margin-top:8px">Descripción</label>
+          <textarea
+            disabled>Refugio comunitario que rescata perros y gatos en Chía. Contamos con programas de esterilización y adopción responsable.</textarea>
+
+          <div style="height:8px"></div>
+          <div style="display:flex;gap:8px">
+            <button class="btn primary" onclick="goTo(11)">Ir al panel administrativo</button>
+            <button class="btn ghost" onclick="goTo(4)">Ver mascotas</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 Panel administrativo (fundación) -->
+      <section id="screen-11" class="screen" aria-labelledby="s11">
+        <div class="card">
+          <h2 id="s11">Panel Administrativo - Casa Peluda</h2>
+          <p class="muted">Gestión de fichas y solicitudes </p>
+
+          <div style="height:8px"></div>
+          <div style="display:flex;gap:8px;flex-direction:column">
+            <button class="btn primary" onclick="goTo(12)">Registrar nueva mascota</button>
+            <button class="btn ghost" onclick="goTo(13)">Gestionar solicitudes</button>
+          </div>
+
+          <div style="height:12px"></div>
+          <h3 class="muted">Resumen</h3>
+          <ul class="list">
+            <li>Animales activos <strong>12</strong></li>
+            <li>Solicitudes pendientes <strong>3</strong></li>
+
+          </ul>
+        </div>
+      </section>
+
+      <!-- 12 Registro de mascota (CRUD) -->
+      <section id="screen-12" class="screen" aria-labelledby="s12">
+        <div class="card">
+          <h2 id="s12">Registrar mascota</h2>
+          <label>Nombre</label>
+          <input id="pet-name" placeholder="Nombre de la mascota">
+          <label style="margin-top:8px">Edad</label>
+          <input id="pet-age" placeholder="Años / meses">
+          <label style="margin-top:8px">Sexo</label>
+          <select id="pet-sex">
+            <option>Hembra</option>
+            <option>Macho</option>
+          </select>
+          <label style="margin-top:8px">Estado de salud</label>
+          <input id="pet-health" placeholder="Vacunas, esterilización">
+          <label style="margin-top:8px">Compatibilidad</label>
+          <select id="pet-compatibilidad">
+            <option>Compatible con bebés</option>
+            <option>Compatible con niños</option>
+            <option>Compatible con gatos</option>
+            <option>Compatible con perros</option>
+            <option>Compatible con otras mascotas</option>
+            <option>Compatible con niños y otros animales</option>
+          </select>
+          <label style="margin-top:8px">Descripción</label>
+          <textarea id="pet-desc" placeholder="Historia breve"></textarea>
+          <label style="margin-top:8px">Foto</label>
+          <div style="display:flex;gap:8px;align-items:center">
+            <label for="pet-file" class="btn ghost" style="margin:0;cursor:pointer">Seleccionar archivo</label>
+            <input id="pet-file" type="file" accept="image/*" style="display:none">
+            <span id="file-name" class="muted" style="font-size:13px">Ningún archivo seleccionado</span>
+          </div>
+          <script>
+            document.getElementById('pet-file')?.addEventListener('change', function(e) {
+              const fileName = e.target.files[0]?.name || 'Ningún archivo seleccionado';
+              document.getElementById('file-name').textContent = fileName;
+            });
+          </script>
+          <div style="height:10px"></div>
+          <div style="display:flex;gap:8px">
+            <button class="btn primary" onclick="savePet()">Guardar mascota</button>
+            <button class="btn ghost" onclick="goTo(11)">Cancelar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13 Gestión de solicitudes -->
+      <section id="screen-13" class="screen" aria-labelledby="s13">
+        <div class="card">
+          <h2 id="s13">Solicitudes de adopción</h2>
+          <p class="muted">Revisa y aprueba solicitudes recibidas</p>
+          <ul class="list" id="requestsList">
+            <!-- Example items -->
+            <li>
+              <div>
+                <strong>María Pérez</strong>
+                <div class="muted">Nube • Solicitud recibida • 02/11</div>
+              </div>
+              <div style="display:flex;gap:6px">
+                <button class="btn primary" onclick="approveRequest(this)">Aprobar</button>
+                <button class="btn ghost" onclick="rejectRequest(this)">Rechazar</button>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Juan R.</strong>
+                <div class="muted">Manchas • Solicitud recibida • 30/10</div>
+              </div>
+              <div style="display:flex;gap:6px">
+                <button class="btn primary" onclick="approveRequest(this)">Aprobar</button>
+                <button class="btn ghost" onclick="rejectRequest(this)">Rechazar</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="nav">
+      <div style="display:flex;gap:8px;">
+        <button class="btn" id="prev" onclick="nav(-1)" disabled>Anterior</button>
+        <button class="btn" id="next" onclick="nav(1)">Siguiente</button>
+      </div>
+      <div class="center muted" id="pager" style="font-size:13px">Pantalla 1 / 13</div>
+    </footer>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
