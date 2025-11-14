@@ -303,7 +303,11 @@ function renderResults() {
     div.innerHTML = createPetCardHTML(
       pet,
       `showPetProfile('${pet.key}')`,
-      `alert('Compartido (simulado)')`,
+      `alert('Compartido
+      
+      
+      s
+      (simulado)')`,
       'Ver',
       'Compartir'
     );
