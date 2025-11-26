@@ -95,7 +95,7 @@ main {
 
 .card {
   background: var(--card);
-  padding: 12px;
+  padding: 10px;
   border-radius: 12px;
   box-shadow: var(--shadow);
   margin-bottom: 12px;
@@ -218,7 +218,7 @@ textarea {
 
 .pet-card img {
   width: 100%;
-  height: 140px;
+  height: 280px;
   object-fit: cover;
   display: block;
 }
